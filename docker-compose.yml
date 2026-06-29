@@ -28,7 +28,7 @@ services:
     build:
       context: srcs/requirements/nginx
     container_name: my_nginx
-    restart: always
+    #restart: always
     ports:
       - "443:443"
     env_file:
@@ -46,11 +46,11 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: /home/r0z0/Desktop/data #just for testing now
+      device: /home/ababdoul/data/mariadb #just for testing now
 
   my_wordpress_vol:
     driver: local
     driver_opts:
       type: none
       o: bind
-      device: /home/r0z0/Desktop/data
+      device: /home/ababdoul/data/wordpress

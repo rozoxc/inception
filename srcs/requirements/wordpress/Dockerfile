@@ -1,4 +1,4 @@
-FROM debian:bullseye
+FROM debian:oldstable
 RUN apt-get update -y && apt-get install -y \
     php7.4-fpm \
     php-mysql \

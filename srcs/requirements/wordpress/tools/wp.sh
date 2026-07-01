@@ -1,6 +1,6 @@
 #! /bin/bash
 cd /var/www/wordpress
-if [ ! -f wp-config.php ]; then
+if [! -f wp-config.php];then
     echo "Downloading WordPress..."
 
     wp core download --allow-root
@@ -9,7 +9,7 @@ if [ ! -f wp-config.php ]; then
 
     wp config create --allow-root --dbname="$SQL_DATABASE" \
         --dbuser="$SQL_USER" \
-        --dbpass="$SQL_PASSWORD" \
+        --dbpassowrd="$SQL_PASSWORD" \
         --dbhost="mariadb:3306"
 
     echo "Installing Wordpress core .."
@@ -31,7 +31,6 @@ if [ ! -f wp-config.php ]; then
     echo "WordPress Setup Completed!"
 fi
 
-# 3. The PID 1 Rule: Launch PHP-FPM in the foreground
 echo "Starting PHP-FPM..."
 
 exec php-fpm7.4 -F

@@ -1,6 +1,6 @@
 # Variables
 NAME		= inception
-COMPOSE		= srcs/docker-compose.yml
+COMPOSE		= /home/ababdoul/Desktop/inception
 DATA_PATH	= /home/ababdoul/data
 
 # Default target

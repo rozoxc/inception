@@ -1,6 +1,6 @@
-#! /bin/bash
+#!/bin/bash
 cd /var/www/wordpress
-if [! -f wp-config.php];then
+if [ ! -f wp-config.php ]; then
     echo "Downloading WordPress..."
 
     wp core download --allow-root
@@ -9,7 +9,7 @@ if [! -f wp-config.php];then
 
     wp config create --allow-root --dbname="$SQL_DATABASE" \
         --dbuser="$SQL_USER" \
-        --dbpassowrd="$SQL_PASSWORD" \
+        --dbpass="$SQL_PASSWORD" \
         --dbhost="mariadb:3306"
 
     echo "Installing Wordpress core .."

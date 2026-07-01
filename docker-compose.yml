@@ -46,8 +46,7 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: /home/ababdoul/data/mariadb #just for testing now
-
+      device: /home/ababdoul/data/mariadb 
   my_wordpress_vol:
     driver: local
     driver_opts:

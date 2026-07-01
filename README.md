@@ -33,7 +33,7 @@ A Virtual Machine virtualizes an entire computer system, including the complete 
 Docker Secrets are encrypted and securely mounted into containers in memory, making them the safest choice for production. Environment Variables (used via `.env` in this project) are injected into the container's environment. While easier to set up for local development, they are less secure as they can be exposed via shell access or `docker inspect`.
 
 #### Docker Network vs Host Network
-A Docker Network (like our bridge network) creates an isolated, private LAN for the containers. They communicate using Docker DNS without exposing internal ports (like `3306` or `9000`) to the outside world. Using the Host Network removes this isolation, binding the container's network directly to the VM's network — a security risk that can also cause port conflicts.
+A Docker Network (like our bridge network) creates an isolated, private LAN for the containers. They communicate using Docker DNS without exposing i00nternal ports (like `3306` or `90`) to the outside world. Using the Host Network removes this isolation, binding the container's network directly to the VM's network — a security risk that can also cause port conflicts.
 
 #### Docker Volumes vs Bind Mounts
 Docker Volumes are managed entirely by the Docker Engine and stored in `/var/lib/docker/volumes/`. Bind Mounts (required by this project) map a specific host path (e.g. `/home/ababdoul/data/...`) directly to a folder inside the container, giving the host direct access to the files.

@@ -17,8 +17,8 @@ This guide provides technical instructions for developers on how to set up, buil
 Before launching the project, the persistent data directories must exist on the host machine. The Docker daemon requires these to bind mount the volumes properly.
 
 ```bash
-mkdir -p /home/ababdoul/Desktop/data/mariadb
-mkdir -p /home/ababdoul/Desktop/data/wordpress
+mkdir -p /home/ababdoul/data/mariadb
+mkdir -p /home/ababdoul/data/wordpress
 ```
 
 > **Note:** Replace `ababdoul` with the actual user profile running the host machine if deployed elsewhere.
@@ -78,8 +78,8 @@ docker exec -it my_wordpress bash
 If the WordPress installation crashes halfway, ghost files will prevent a re-installation. Run this to wipe the containers, volumes, and data:
 ```bash
 docker compose down -v
-sudo rm -rf /home/ababdoul/Desktop/data/mariadb/*
-sudo rm -rf /home/ababdoul/Desktop/data/wordpress/*
+sudo rm -rf /home/ababdoul/data/mariadb/*
+sudo rm -rf /home/ababdoul/data/wordpress/*
 ```
 
 **System prune (clear build cache):**
@@ -97,8 +97,8 @@ Data persistence is achieved strictly through **Bind Mounts**, bypassing Docker'
 
 | Data | Host path |
 |---|---|
-| Database files | `/home/ababdoul/Desktop/data/mariadb` |
-| WordPress web files | `/home/ababdoul/Desktop/data/wordpress` |
+| Database files | `/home/ababdoul/data/mariadb` |
+| WordPress web files | `/home/ababdoul/data/wordpress` |
 
 ### How does it persist?
 

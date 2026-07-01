@@ -9,7 +9,7 @@ if [ ! -f /var/lib/mysql/${SQL_DATABASE} ]; then
     mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '${SQL_ROOT_PASSWORD}';"
 
     mysqladmin -u root -p"${SQL_ROOT_PASSWORD}" shutdown
-fi
 else
     echo "mariadb database already inizialized :)"
+fi
 exec mysqld_safe
